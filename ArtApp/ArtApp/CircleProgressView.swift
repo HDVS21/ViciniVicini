@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CircleProgressView: View {
     
-    var userProgress : Double = 0.3
+    var userProgress : Double
     
     var body: some View {
         ZStack{
@@ -37,5 +37,5 @@ struct CircleProgressView: View {
 }
 
 #Preview {
-    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true)
+    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true, userProgress: 0.7)
 }

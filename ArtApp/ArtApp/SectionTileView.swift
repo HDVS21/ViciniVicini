@@ -13,7 +13,7 @@ struct SectionTileView: View {
     var sectionCategory : String
     var sectionImage : String
     var isUnlocked : Bool
-    var userProgress: Double = 0.1
+    var userProgress: Double
     
     var body: some View {
         
@@ -41,7 +41,7 @@ struct SectionTileView: View {
                 
             HStack(spacing: 30) {
             
-                CircleProgressView()
+                CircleProgressView(userProgress: userProgress)
                     .frame(width: 70, height: 70)
                
                 VStack(alignment: .leading){
@@ -62,5 +62,5 @@ struct SectionTileView: View {
 }
 
 #Preview {
-    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true)
+    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true, userProgress: 0.30)
 }
