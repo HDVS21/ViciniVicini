@@ -23,8 +23,11 @@ struct BlurredMiniGameView: View {
     
     var body: some View {
         VStack {
+            if selectedAnswer == nil {
+            Text("Guess the artist")
+                .font(.largeTitle)
             HStack{
-                if selectedAnswer == nil {
+                
                     ForEach(scores, id: \.self) { score in
                         Text("\(score)")
                             .padding()
