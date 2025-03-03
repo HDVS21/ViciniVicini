@@ -10,8 +10,10 @@ import SwiftUI
 struct SectionTileView: View {
     
     var sectionTitle : String
+    var sectionCategory : String
     var sectionImage : String
     var isUnlocked : Bool
+    var userProgress: Double = 0.1
     
     var body: some View {
         
@@ -37,10 +39,21 @@ struct SectionTileView: View {
                         )
                        
                 
-            Text(sectionTitle)
-                .font(.largeTitle)
-                .foregroundStyle(.white)
-                .fontWeight(.bold)
+            HStack(spacing: 30) {
+            
+                CircleProgressView()
+                    .frame(width: 70, height: 70)
+               
+                VStack(alignment: .leading){
+                    Text(sectionCategory)
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                    Text(sectionTitle)
+                        .font(.largeTitle)
+                        .foregroundStyle(.white)
+                        .fontWeight(.bold)
+                }
+            }
         }
         
         .frame(height: 150)
@@ -49,5 +62,5 @@ struct SectionTileView: View {
 }
 
 #Preview {
-    SectionTileView(sectionTitle: "Classicism", sectionImage: "classicism", isUnlocked: true)
+    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true)
 }

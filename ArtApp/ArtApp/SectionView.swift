@@ -11,10 +11,8 @@ struct SectionView: View {
     var body: some View {
         ScrollView {
             VStack {
-                SectionTileView(sectionTitle: "Classicism", sectionImage: "classicism", isUnlocked: true)
-                SectionTileView(sectionTitle: "Classicism", sectionImage: "classicism", isUnlocked: false)
-                SectionTileView(sectionTitle: "Classicism", sectionImage: "classicism", isUnlocked: false)
-                SectionTileView(sectionTitle: "Classicism", sectionImage: "classicism", isUnlocked: false)
+                SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true)
+                SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: false); SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: false); SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: false)
                 
             }
             .padding()

@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct CircleProgressView: View {
+    
+    var userProgress : Double = 0.3
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Circle()
+                .stroke(Color.white.opacity(0.4),
+                        lineWidth: 10)
+            Text("\(userProgress * 100, specifier: "%.0f")%")
+                .font(.caption)
+                                .foregroundStyle(Color.white)
+                                .bold()
+            Circle()
+                .trim(from: 0, to: userProgress)
+                .stroke(
+                    Color.white,
+                                   style: StrokeStyle(
+                                       lineWidth: 10,
+                                       lineCap: .round
+                                   )
+                               )
+                .rotationEffect(.degrees(-90))
+                .animation(.easeOut, value: userProgress)
+            
+        }
     }
 }
 
 #Preview {
-    CircleProgressView()
+    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true)
 }
