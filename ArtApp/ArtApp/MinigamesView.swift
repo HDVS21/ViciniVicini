@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MinigamesView: View {
-    @State private var unlockedSteps = [true, true, true, true, true, false, false, false, false, false]
+    @State private var unlockedSteps = [true, true, false, false, false, false, false, false, false, false]
     
     var body: some View {
         NavigationStack {
@@ -79,6 +79,8 @@ struct MinigameDestinationView: View {
         switch minigameNumber {
         case 1:
             FindTheFakeView()
+        case 2:
+            BlurredMiniGameView()
         default:
             DefaultMinigameView()
         }
