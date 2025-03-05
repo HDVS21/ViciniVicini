@@ -2,12 +2,10 @@
 //  View1.swift
 //  ArtApp
 //
-//  Created by Gustavo Vasquez Valdes Salas on 5/3/25.
+//  Created by Gustavo Vasquez on 5/3/25.
 //
 
 import SwiftUI
-
-
 
 struct IntroductionLesson: View {
     // Enables back navigation
