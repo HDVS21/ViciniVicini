@@ -8,7 +8,7 @@ struct SectionTileView: View {
     var userProgress: Double
     
     var body: some View {
-        NavigationLink(destination: MinigamesView()) {
+        NavigationLink(destination: IntroductionLesson()) {
             ZStack {
                 Image(sectionImage)
                     .resizable()
