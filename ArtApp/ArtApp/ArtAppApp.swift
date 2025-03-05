@@ -11,7 +11,7 @@ import SwiftUI
 struct ArtAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Minigame_1()
         }
     }
 }
