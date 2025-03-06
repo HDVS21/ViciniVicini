@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct LessonDetail {
     var id: Int
     var title: String
     var objective: String
-    var content: [String]
+    var contents: [(title: String, view: AnyView)]
 }
