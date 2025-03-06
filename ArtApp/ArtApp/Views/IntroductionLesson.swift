@@ -16,16 +16,16 @@ struct IntroductionLesson: View {
         id: 1,
         title: "Introduction to \nMonet",
         objective: "Get to know Claude Monet, one of the most famous painters in history",
-        content: [
-            "Who Was Claude Monet?",
-            "The Impressionist Technique",
-            "Monet's Influences"
+        contents: [
+            ("Who Was Claude Monet?", AnyView(WhoWasMonet())),
+            ("The Impressionist Technique", AnyView(WhoWasMonet())),
+            ("Monet’s Influences", AnyView(WhoWasMonet()))
         ]
     )
     
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderView(title: lesson.title, lessonNumber: lesson.id) {
+            LessonHeader(title: lesson.title, lessonNumber: lesson.id) {
                 presentationMode.wrappedValue.dismiss()
             }
             
@@ -46,7 +46,7 @@ struct IntroductionLesson: View {
                     .font(.headline)
                     .bold()
                 
-                ContentListView(contents: lesson.content)
+                ContentListView(contents: lesson.contents)
             }
             .padding()
             Spacer()
@@ -56,55 +56,16 @@ struct IntroductionLesson: View {
     }
 }
 
-struct HeaderView: View {
-    let title: String
-    let lessonNumber: Int
-    let onBack: () -> Void
-    
-    var body: some View {
-        ZStack(alignment: .topLeading) {
-            RoundedRectangle(cornerRadius: 40)
-                .fill(Color(.systemGray6))
-                .frame(height: 280)
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Button(action: {
-                    onBack()
-                }) {
-                    Image(systemName: "arrow.left")
-                        .foregroundColor(.gray)
-                        .padding()
-                        .background(Circle().fill(Color.white))
-                }
-                .padding(.top, 35)
-                .padding(.bottom, 60)
-                .padding(.leading, 15)
-                
-                Text("Lesson \(lessonNumber)")
-                    .font(.caption)
-                    .foregroundStyle(.gray)
-                    .padding(.leading, 15)
-                
-                Text(title)
-                    .foregroundStyle(.gray)
-                    .font(.title)
-                    .bold()
-                    .padding(.leading, 15)
-            }
-            .padding()
-        }
-    }
-}
-
 struct ContentListView: View {
-    let contents: [String]
+    let contents: [(title: String, view: AnyView)]
     
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(contents, id: \.self) { item in
-                NavigationLink(destination: Text(item)) {
+            ForEach(contents.indices, id: \.self) { index in
+                let content = contents[index]
+                NavigationLink(destination: content.view) {
                     HStack {
-                        Text(item)
+                        Text(content.title)
                             .font(.body)
                             .foregroundColor(.gray)
                         

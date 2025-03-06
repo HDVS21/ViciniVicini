@@ -33,6 +33,7 @@ struct SectionTileView: View {
                             .font(.largeTitle)
                             .foregroundStyle(.white)
                             .fontWeight(.bold)
+                            .multilineTextAlignment(.leading)
                     }
                 }
             }
@@ -43,5 +44,5 @@ struct SectionTileView: View {
 }
 
 #Preview {
-    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true, userProgress: 0.30)
+    SectionTileView(sectionTitle: "Introduction to Monet", sectionCategory: "Lesson 1", sectionImage: "classicism", isUnlocked: true, userProgress: 0.30)
 }
