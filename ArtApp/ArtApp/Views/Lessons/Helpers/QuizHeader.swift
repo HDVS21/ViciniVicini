@@ -7,40 +7,36 @@
 
 import SwiftUI
 
-struct LessonHeader: View {
+struct QuizHeader: View {
     let title: String
-    let lessonNumber: Int
+    let lettersColor: String
+    let backgroundColor: String
     let onBack: () -> Void
     
     var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 40)
-                .fill(Color(.systemGray6))
-                .frame(height: 280)
+                .fill(Color(backgroundColor))
+                .frame(height: 200)
             
             VStack(alignment: .leading, spacing: 8) {
                 Button(action: {
                     onBack()
                 }) {
                     Image(systemName: "arrow.left")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(lettersColor))
                         .padding()
                         .background(Circle().fill(Color.white))
                 }
                 .padding(.top, 35)
-                .padding(.bottom, 60)
+                .padding(.bottom, 30)
                 .padding(.leading, 15)
                 
-                Text("Lesson \(lessonNumber)")
-                    .font(.caption)
-                    .foregroundStyle(.gray)
-                    .padding(.leading, 15)
-                
                 Text(title)
-                    .foregroundStyle(.gray)
-                    .font(.title)
+                    .foregroundStyle(Color(lettersColor))
+                    .font(.title2)
                     .bold()
-                    .padding(.leading, 15)
+                    .frame(maxWidth: .infinity, alignment: .center)
             }
             .padding()
         }
@@ -49,9 +45,10 @@ struct LessonHeader: View {
 
 #Preview {
     @Previewable @Environment(\.presentationMode) var presentationMode
-    LessonHeader(
-        title: "Introduction to Monet",
-        lessonNumber: 1
+    QuizHeader(
+        title: "Find the fake",
+        lettersColor: "green-letters",
+        backgroundColor: "green-background"
     ) {
         presentationMode.wrappedValue.dismiss()
     }
