@@ -16,33 +16,34 @@ struct IntroductionLesson: View {
         id: 1,
         title: "Introduction to \nMonet",
         objective: "Get to know Claude Monet, one of the most famous painters in history",
+        image: "LessonOne",
         contents: [
-            ("Who Was Claude Monet?", AnyView(WhoWasMonet())),
-            ("The Impressionist Technique", AnyView(WhoWasMonet())),
-            ("Monet’s Influences", AnyView(WhoWasMonet()))
+            ("Who Was Claude Monet?", AnyView(WhoWasMonet()), true),
+            ("The Impressionist Technique", AnyView(WhoWasMonet()), false),
+            ("Monet’s Influences", AnyView(WhoWasMonet()), false)
         ]
     )
     
     var body: some View {
         VStack(alignment: .leading) {
-            LessonHeader(title: lesson.title, lessonNumber: lesson.id) {
+            LessonHeader(title: lesson.title, lessonNumber: lesson.id, backgroundImage: lesson.image) {
                 presentationMode.wrappedValue.dismiss()
             }
             
             VStack(alignment: .leading, spacing: 16) {
                 Text("Objective")
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color("blue-letters"))
                     .font(.headline)
                     .bold()
                     .padding(.top, 20)
                 
                 Text(lesson.objective)
                     .font(.body)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color("blue-letters"))
                     .padding(.bottom, 20)
                 
                 Text("Content")
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color("blue-letters"))
                     .font(.headline)
                     .bold()
                 
@@ -57,7 +58,7 @@ struct IntroductionLesson: View {
 }
 
 struct ContentListView: View {
-    let contents: [(title: String, view: AnyView)]
+    let contents: [(title: String, view: AnyView, isChecked: Bool)]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -65,17 +66,20 @@ struct ContentListView: View {
                 let content = contents[index]
                 NavigationLink(destination: content.view) {
                     HStack {
+                        // Checkbox
+                        Image(systemName: content.isChecked ? "checkmark.square.fill" : "square")
+                            .foregroundColor(Color("blue-letters"))
                         Text(content.title)
                             .font(.body)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color("blue-letters"))
                         
                         Spacer()
                         
                         Image(systemName: "chevron.right")
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color("blue-letters"))
                     }
                     .padding()
-                    .background(Color(.systemGray6))
+                    .background(Color("blue-light"))
                 }
                 Divider()
             }

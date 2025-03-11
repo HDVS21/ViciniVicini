@@ -12,5 +12,12 @@ struct LessonDetail {
     var id: Int
     var title: String
     var objective: String
-    var contents: [(title: String, view: AnyView)]
+    var image: String
+    var contents: [(title: String, view: AnyView, isChecked: Bool)]
+}
+
+struct sublessonDetail {
+    var title: String
+    var lettersColor: String
+    var backgroundColor: String
 }
