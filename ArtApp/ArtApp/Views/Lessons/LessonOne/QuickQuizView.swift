@@ -50,7 +50,7 @@ struct QuickQuizView: View {
                     }
                     Spacer()
                     
-                    // Affichage des options de réponse
+
                     ForEach(currentQuestion.answers, id: \.self) { answer in
                         Button(action: {
                             selectedAnswer = answer
@@ -66,7 +66,6 @@ struct QuickQuizView: View {
                     }
                     Spacer()
                     
-                    // Bouton Submit Answer (disparaît si la réponse est correcte)
                     if !showNextButton {
                         Button(action: {
                             guard let selectedAnswer = selectedAnswer else { return }
@@ -74,7 +73,7 @@ struct QuickQuizView: View {
                             alertMessage = isAnswerCorrect! ? "Correct!" : "Incorrect! Try again."
                             showAlert = true
                             
-                            // Si la réponse est correcte, cacher le bouton "Confirm Selection" et afficher "Next Question"
+            
                             if isAnswerCorrect! {
                                 showNextButton = true
                             }
@@ -91,18 +90,18 @@ struct QuickQuizView: View {
                         }
                     }
                     
-                    // Bouton Next Question (uniquement si la réponse est correcte)
+                   
                     if showNextButton {
                         Button(action: {
                             if currentQuestionIndex < quizDetails.count - 1 {
-                                // Passer à la question suivante
+                               
                                 currentQuestionIndex += 1
                                 selectedAnswer = nil
                                 isAnswerCorrect = nil
                                 showAlert = false
                                 showNextButton = false
                             } else {
-                                // Fin du quiz, retour à la leçon
+                             
                                 navigateToLesson = true
                             }
                         }) {
