@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct FindTheFakeView: View {
-
-    let paintings = ["painting1", "painting2", "painting3", "fakePainting"]
+    @Environment(\.presentationMode) var presentationMode
+    
+    var paintings = ["painting1", "painting2", "painting3", "fakePainting"]
     
     // Estado para manejar la selección del usuario
     @State private var selectedPainting: String? = nil
     @State private var showResult = false
     @State private var isCorrect = false
     
-    let fakePainting = "fakePainting"
+    @State var fakePainting = "fakePainting"
     
     var body: some View {
-        VStack {
-            Text("Find the Fake")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding()
+        VStack (alignment: .leading) {
+            LessonHeader(title: "Find the fake", lessonNumber: 0) {
+                presentationMode.wrappedValue.dismiss()
+            }
             
             Text("Select the painting that does not belong in this group")
                 .font(.subheadline)
-                .padding(.bottom, 10)
+                .padding()
             
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                 ForEach(paintings, id: \.self) { painting in
@@ -37,6 +37,7 @@ struct FindTheFakeView: View {
 //                        .resizable()
                         .scaledToFit()
                         .frame(height: 150)
+                        .cornerRadius(16.0)
                         .border(selectedPainting == painting ? Color.blue : Color.clear, width: 4)
                         .onTapGesture {
                             selectedPainting = painting
@@ -63,8 +64,21 @@ struct FindTheFakeView: View {
                         .cornerRadius(10)
                         .padding()
                 }
+            } else {
+                Text("Confirm selection")
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
             }
+            
+            Spacer()
         }
+        .navigationBarHidden(true)
+        .edgesIgnoringSafeArea(.top)
         .alert(isPresented: $showResult) {
             Alert(
                 title: Text(isCorrect ? "Correct!" : "Incorrect"),
