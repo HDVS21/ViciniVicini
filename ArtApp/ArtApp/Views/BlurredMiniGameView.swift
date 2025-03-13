@@ -27,7 +27,6 @@ struct BlurredMiniGameView: View {
             Text("Guess the artist")
                 .font(.largeTitle)
             HStack{
-                
                     ForEach(scores, id: \.self) { score in
                         Text("\(score)")
                             .padding()

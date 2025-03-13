@@ -1,0 +1,72 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%.0f%%" : {
+
+    },
+    "%lld" : {
+
+    },
+    "Check Answers" : {
+
+    },
+    "Confirm selection" : {
+
+    },
+    "Content" : {
+
+    },
+    "Continue" : {
+
+    },
+    "Correct!" : {
+
+    },
+    "Error" : {
+
+    },
+    "Error! Try again." : {
+
+    },
+    "Guess the artist" : {
+
+    },
+    "Hint" : {
+
+    },
+    "Incorrect" : {
+
+    },
+    "Lesson %lld" : {
+
+    },
+    "Lessons" : {
+
+    },
+    "Match the fruits with their correct pair" : {
+
+    },
+    "Minigame not available" : {
+
+    },
+    "Objective" : {
+
+    },
+    "Section Name" : {
+
+    },
+    "Select the painting that does not belong in this group" : {
+
+    },
+    "Success! All matches are correct." : {
+
+    },
+    "Try again." : {
+
+    },
+    "You chose the right answer." : {
+
+    }
+  },
+  "version" : "1.0"
+}
