@@ -21,7 +21,7 @@ struct FindTheFakeView: View {
     
     var body: some View {
         VStack (alignment: .leading) {
-            LessonHeader(title: "Find the fake", lessonNumber: 0) {
+            LessonHeader(title: "Find the fake", lessonNumber: 0, backgroundImage: "blue-background") {
                 presentationMode.wrappedValue.dismiss()
             }
             

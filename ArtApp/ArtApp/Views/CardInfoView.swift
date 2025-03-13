@@ -14,7 +14,7 @@ struct CardInfoView: View {
     
     var body: some View {
         VStack {
-            LessonHeader(title: "Monet´s Influences", lessonNumber: 0) {
+            SublessonHeader(title: "Monet´s Influences", lettersColor: "blue-letters", backgroundColor: "blue-background") {
                 presentationMode.wrappedValue.dismiss()
             }
             
