@@ -84,6 +84,7 @@ struct ContentListView: View {
                 Divider()
             }
         }
+        .navigationBarHidden(true)
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }

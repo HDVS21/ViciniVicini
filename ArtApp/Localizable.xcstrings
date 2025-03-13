@@ -13,6 +13,9 @@
     "Confirm selection" : {
 
     },
+    "Confirm Selection" : {
+
+    },
     "Content" : {
 
     },
@@ -28,6 +31,9 @@
     "Error! Try again." : {
 
     },
+    "Finish Quiz" : {
+
+    },
     "Guess the artist" : {
 
     },
@@ -35,6 +41,9 @@
 
     },
     "Incorrect" : {
+
+    },
+    "Incorrect!" : {
 
     },
     "Lesson %lld" : {
@@ -49,10 +58,19 @@
     "Minigame not available" : {
 
     },
+    "Monet Picture" : {
+
+    },
+    "Next" : {
+
+    },
+    "Next Question" : {
+
+    },
     "Objective" : {
 
     },
-    "Section Name" : {
+    "OK" : {
 
     },
     "Select the painting that does not belong in this group" : {

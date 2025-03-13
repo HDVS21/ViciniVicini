@@ -53,7 +53,7 @@ struct CardCarousel: View {
         
         .onAppear {
             guard fakedCards.isEmpty else { return }
-            for color in [Color.blue, Color.blue, Color.blue, Color.blue, Color.blue] {
+            for color in [Color.blueBackground, Color.blueBackground, Color.blueBackground, Color.blueBackground, Color.blueBackground] {
                 listOfCards.append(.init(color: color))
             }
             

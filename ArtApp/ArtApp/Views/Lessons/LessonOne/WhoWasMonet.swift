@@ -46,7 +46,7 @@ struct WhoWasMonet: View {
                     .padding(.horizontal, 30)
                 
                 // Quiz Button
-                NavigationLink(destination: WhoWasMoneQuiz()) {
+                NavigationLink(destination: QuickQuizView()) {
                     Text("Next")
                         .font(.headline)
                         .foregroundColor(.white)

@@ -17,7 +17,7 @@ struct PageControl: UIViewRepresentable {
         control.currentPage = currentCard
         control.backgroundStyle = .minimal
         control.pageIndicatorTintColor = .black
-        control.currentPageIndicatorTintColor = .systemBlue
+        control.currentPageIndicatorTintColor = .blueBackground
         control.allowsContinuousInteraction = false
         
         return control
