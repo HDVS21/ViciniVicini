@@ -6,7 +6,7 @@ struct MinigamesView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                SectionInfo()
+//                SectionInfo()
                 
                 ScrollViewReader { proxy in
                     ScrollView {

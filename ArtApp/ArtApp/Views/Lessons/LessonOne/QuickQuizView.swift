@@ -117,7 +117,7 @@ struct QuickQuizView: View {
                         }
                     }
                     
-                    NavigationLink(destination: SectionView(), isActive: $navigateToLesson) {
+                    NavigationLink(destination: IntroductionLesson().navigationBarHidden(true), isActive: $navigateToLesson) {
                         EmptyView()
                     }
                 }
@@ -133,6 +133,7 @@ struct QuickQuizView: View {
             .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.top)
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

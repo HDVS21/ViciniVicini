@@ -34,8 +34,8 @@ struct CardInfoView: View {
                     .font(.title2)
                     .padding()
                     .frame(width: 215)
-                    .background(.blue)
-                    .foregroundColor(.white)
+                    .background(.blueBackground)
+                    .foregroundColor(.blueLetters)
                     .cornerRadius(20)
                     .padding()
             }

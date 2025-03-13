@@ -21,9 +21,13 @@ struct SectionTileView: View {
                             .fill(Color.black.opacity(0.3))
                     )
                 
-                HStack(spacing: 30) {
-                    CircleProgressView(userProgress: userProgress)
-                        .frame(width: 70, height: 70)
+                HStack() {
+                    HStack {
+                        CircleProgressView(userProgress: userProgress)
+                            .frame(width: 70, height: 70)
+//                        Spacer()
+                    }
+                    .padding(.horizontal)
                     
                     VStack(alignment: .leading) {
                         Text(sectionCategory)
@@ -35,6 +39,8 @@ struct SectionTileView: View {
                             .fontWeight(.bold)
                             .multilineTextAlignment(.leading)
                     }
+                    
+                    Spacer()
                 }
             }
             .frame(height: 150)
