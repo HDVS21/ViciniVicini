@@ -10,14 +10,14 @@ import SwiftUI
 struct FindTheFakeView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var paintings = ["painting1", "painting2", "painting3", "fakePainting"]
+    var paintings = ["ftf1-painting1", "ftf1-painting2", "ftf1-painting3", "ftf1-fakePainting"]
     
     // Estado para manejar la selección del usuario
     @State private var selectedPainting: String? = nil
     @State private var showResult = false
     @State private var isCorrect = false
     
-    @State var fakePainting = "fakePainting"
+    @State var fakePainting = "ftf1-fakePainting"
     
     var body: some View {
         VStack (alignment: .center, spacing: 10) {
@@ -36,22 +36,35 @@ struct FindTheFakeView: View {
                           GridItem(.flexible(), spacing: -20)
                       ], spacing: 20) {
                 ForEach(paintings, id: \.self) { painting in
-//                    Image(painting)
-                    Rectangle()
+                    ZStack{
+                        
+                   
+                   
+                        RoundedRectangle(cornerRadius: 16.0)
                         .fill(.gray)
                         .scaledToFit()
                         .frame(height: 150)
-                        .cornerRadius(16.0)
                         .overlay(
                         
                             RoundedRectangle(cornerRadius: 16.0)
-                                .stroke(selectedPainting == painting ? Color("green-background") : Color.clear, lineWidth: 4)
+                                .stroke(selectedPainting == painting ? Color("green-background") : Color.clear, lineWidth: 10)
                         )
-                        .onTapGesture {
-                            selectedPainting = painting
-                        }
+                       
+                        
+                        Image(painting)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 150, height: 150)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .onTapGesture {
+                                    selectedPainting = painting
+                                }
                 }
-
+                   
+                    .onTapGesture {
+                        selectedPainting = painting
+                    }
+                }
             }
             .padding()
             Spacer()
