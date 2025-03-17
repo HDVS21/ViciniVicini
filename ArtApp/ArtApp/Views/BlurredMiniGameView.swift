@@ -29,11 +29,11 @@ struct BlurredMiniGameView: View {
                     dismiss()
                 }
                 VStack{
-                let currentQuestion = quizDetails
+            
                 
                 VStack(alignment: .center, spacing: 10) {
                     Spacer()
-                    Text(currentQuestion.question)
+                    Text(quizDetails.question)
                         .multilineTextAlignment(.center)
                         .frame(height: 50)
                     
@@ -43,7 +43,7 @@ struct BlurredMiniGameView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .foregroundColor(Color("green-options"))
                             .frame(width: 280, height: 159)
-                        Image(currentQuestion.painting)
+                        Image(quizDetails.painting)
                             .resizable()
                             .scaledToFill()
                             .blur(radius: blurEffect)
@@ -57,7 +57,7 @@ struct BlurredMiniGameView: View {
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .foregroundColor(Color("green-buttons") )
+                                .foregroundColor(blurEffect > 0 ? Color("green-buttons") : Color.gray)
                                 .frame(width: 90, height: 20)
                                 .shadow(radius: 3)
                             Text("Get a hint")
@@ -68,7 +68,7 @@ struct BlurredMiniGameView: View {
                     }
                     Spacer()
                     
-                    ForEach(currentQuestion.answers, id: \.self) { answer in
+                    ForEach(quizDetails.answers, id: \.self) { answer in
                         Button(action: {
                             selectedAnswer = answer
                         }) {
@@ -86,9 +86,8 @@ struct BlurredMiniGameView: View {
                     
                     Button(action: {
                         guard let selectedAnswer = selectedAnswer else { return }
-                        isAnswerCorrect = selectedAnswer == currentQuestion.correctAnswer
-                        alertMessage = isAnswerCorrect! ? "Correct!" : "Incorrect! Try again."
-                        showAlert = true
+                        isAnswerCorrect = selectedAnswer == quizDetails.correctAnswer
+                
                         
                         
                     }) {
