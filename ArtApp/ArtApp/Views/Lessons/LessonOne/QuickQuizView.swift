@@ -11,9 +11,9 @@ struct QuickQuizView: View {
     @Environment(\.dismiss) var dismiss
     
     let quizDetails = [
-        QuickQuiz(question: "What type of art influenced Monet’s garden design?", painting: "Monet's garden", answers: ["Italian Renaissance", "Japanese prints", "Greek sculptures"], correctAnswer: "Japanese prints"),
-        QuickQuiz(question: "What subject did Monet love to paint?", painting: "Monet's painting", answers: ["Mythological creatures", "Nature & changing light", "Portraits of kings"], correctAnswer: "Nature & changing light"),
-        QuickQuiz(question: "Who was NOT part of Monet’s Impressionist group?", painting: "Monet's painting", answers: ["Edgar Degas", "Vincent van Gogh", "Pierre-Auguste Renoir"], correctAnswer: "Vincent van Gogh"),
+        QuickQuiz(question: "What type of art influenced Monet’s garden design?", painting: "quickQuiz1", answers: ["Italian Renaissance", "Japanese prints", "Greek sculptures"], correctAnswer: "Japanese prints"),
+        QuickQuiz(question: "What subject did Monet love to paint?", painting: "quickQuiz2", answers: ["Mythological creatures", "Nature & changing light", "Portraits of kings"], correctAnswer: "Nature & changing light"),
+        QuickQuiz(question: "Who was NOT part of Monet’s Impressionist group?", painting: "quickQuiz3", answers: ["Edgar Degas", "Vincent van Gogh", "Pierre-Auguste Renoir"], correctAnswer: "Vincent van Gogh"),
     ]
     
     @State private var currentQuestionIndex = 0
@@ -37,6 +37,7 @@ struct QuickQuizView: View {
                     Spacer()
                     Text(currentQuestion.question)
                         .multilineTextAlignment(.center)
+                        .frame(height: 50)
                     
                     Spacer()
                     
@@ -44,10 +45,13 @@ struct QuickQuizView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .foregroundColor(Color("pink-options"))
                             .frame(width: 280, height: 159)
-                        Text(currentQuestion.painting)
-                            .font(.caption)
-                            .foregroundStyle(Color("pink-letters"))
+                        Image(currentQuestion.painting)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 280, height: 159)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
+                    .clipped()
                     Spacer()
                     
 
