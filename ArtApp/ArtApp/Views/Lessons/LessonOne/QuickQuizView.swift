@@ -112,7 +112,7 @@ struct QuickQuizView: View {
                             ZStack {
                                 Capsule()
                                     .frame(width: 215, height: 42)
-                                    .foregroundStyle(Color("pink-buttons"))
+                                    .foregroundStyle( Color("pink-buttons"))
                                     .shadow(radius: 3)
                                 Text(currentQuestionIndex < quizDetails.count - 1 ? "Next Question" : "Finish Quiz")
                                     .foregroundStyle(.white)
