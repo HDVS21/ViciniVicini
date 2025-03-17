@@ -85,7 +85,7 @@ struct QuickQuizView: View {
                             ZStack {
                                 Capsule()
                                     .frame(width: 215, height: 42)
-                                    .foregroundStyle(Color("pink-buttons"))
+                                    .foregroundStyle(selectedAnswer != nil ? Color("pink-buttons") : Color.gray)
                                     .shadow(radius: 3)
                                 Text("Confirm Selection")
                                     .foregroundStyle(.white)
