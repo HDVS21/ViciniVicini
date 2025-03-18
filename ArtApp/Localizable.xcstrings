@@ -188,6 +188,8 @@
       }
     },
     "Greek sculptures" : {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -196,6 +198,12 @@
           }
         }
       }
+=======
+
+>>>>>>> Stashed changes
+=======
+
+>>>>>>> Stashed changes
     },
     "Guess the artist" : {
       "localizations" : {
@@ -263,6 +271,8 @@
       }
     },
     "Italian Renaissance" : {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -281,6 +291,17 @@
           }
         }
       }
+=======
+=======
+>>>>>>> Stashed changes
+
+    },
+    "Japanese prints" : {
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     },
     "Lesson %lld" : {
       "localizations" : {
@@ -355,6 +376,8 @@
       }
     },
     "Mythological creatures" : {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -373,6 +396,17 @@
           }
         }
       }
+=======
+=======
+>>>>>>> Stashed changes
+
+    },
+    "Nature & changing light" : {
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     },
     "Next" : {
       "localizations" : {
@@ -449,6 +483,8 @@
       }
     },
     "Portraits of kings" : {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -457,6 +493,12 @@
           }
         }
       }
+=======
+
+>>>>>>> Stashed changes
+=======
+
+>>>>>>> Stashed changes
     },
     "Select the painting that does not belong in this group" : {
       "localizations" : {
@@ -527,6 +569,8 @@
 
     },
     "What subject did Monet love to paint?" : {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -545,6 +589,17 @@
           }
         }
       }
+=======
+=======
+>>>>>>> Stashed changes
+
+    },
+    "What type of art influenced Monet’s garden design?" : {
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     },
     "Who was Monet?" : {
       "comment" : "Who was Monet?",
@@ -564,6 +619,7 @@
       }
     },
     "Who was NOT part of Monet’s Impressionist group?" : {
+<<<<<<< Updated upstream
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -572,6 +628,11 @@
           }
         }
       }
+    },
+    "Who was NOT part of Monet’s Impressionist group?" : {
+=======
+>>>>>>> Stashed changes
+
     }
   },
   "version" : "1.0"
