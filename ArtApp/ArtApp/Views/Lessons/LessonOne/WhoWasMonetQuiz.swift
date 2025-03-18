@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WhoWasMoneQuiz: View {
     // Enables back navigation
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var path: NavigationPath
     
     // Lesson details
     let sublesson: sublessonDetail = sublessonDetail(
@@ -20,9 +20,7 @@ struct WhoWasMoneQuiz: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            QuizHeader(title: "Quick Quiz", lettersColor: "pink-letters", backgroundColor: "pink-background") {
-                presentationMode.wrappedValue.dismiss()
-            }
+            QuizHeader(title: "Quick Quiz", lettersColor: "pink-letters", backgroundColor: "pink-background", path: $path)
             
             VStack(alignment: .leading, spacing: 16) {
 //                Text("Objective")
@@ -41,5 +39,5 @@ struct WhoWasMoneQuiz: View {
 }
 
 #Preview {
-    WhoWasMoneQuiz()
+    WhoWasMoneQuiz(path: .constant(NavigationPath()))
 }

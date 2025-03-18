@@ -13,7 +13,7 @@ struct LessonDetail {
     var title: String
     var objective: String
     var image: String
-    var contents: [(title: String, view: AnyView, isChecked: Bool)]
+    var contents: [(title: String, viewIdentifier: String, isChecked: Bool)]
 }
 
 struct sublessonDetail {

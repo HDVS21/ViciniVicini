@@ -38,5 +38,12 @@ struct CircleProgressView: View {
 }
 
 #Preview {
-    SectionTileView(sectionTitle: "Classicism", sectionCategory: "Movement", sectionImage: "classicism", isUnlocked: true, userProgress: 0.7)
+    SectionTileView(
+        sectionTitle: "Classicism",
+        sectionCategory: "Movement",
+        sectionImage: "classicism",
+        isUnlocked: true,
+        userProgress: 0.7,
+        path: .constant(NavigationPath())
+    )
 }

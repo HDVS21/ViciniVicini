@@ -7,8 +7,11 @@ struct SectionTileView: View {
     var isUnlocked: Bool
     var userProgress: Double
     
+    @Binding var path: NavigationPath
+    
     var body: some View {
-        NavigationLink(destination: IntroductionLesson()) {
+        // Set the value to sectionTitle for dynamic routing
+        NavigationLink(value: sectionTitle) {
             ZStack {
                 Image(sectionImage)
                     .resizable()
@@ -53,5 +56,12 @@ struct SectionTileView: View {
 }
 
 #Preview {
-    SectionTileView(sectionTitle: "Introduction to Monet", sectionCategory: "Lesson 1", sectionImage: "classicism", isUnlocked: true, userProgress: 0.30)
+    SectionTileView(
+        sectionTitle: "Introduction to Monet",
+        sectionCategory: "Lesson 1",
+        sectionImage: "classicism",
+        isUnlocked: true,
+        userProgress: 0.30,
+        path: .constant(NavigationPath())
+    )
 }
