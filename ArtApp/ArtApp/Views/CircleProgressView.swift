@@ -14,16 +14,17 @@ struct CircleProgressView: View {
     var body: some View {
         ZStack{
             Circle()
-                .stroke(Color.white.opacity(0.4),
+                .stroke(Color("blue-light"),
                         lineWidth: 10)
+            
             Text("\(userProgress * 100, specifier: "%.0f")%")
-                .font(.caption)
-                                .foregroundStyle(Color.white)
+                .font(.headline)
+                                .foregroundStyle(Color.black)
                                 .bold()
             Circle()
                 .trim(from: 0, to: userProgress)
                 .stroke(
-                    Color.white,
+                    Color("blue-letters"),
                                    style: StrokeStyle(
                                        lineWidth: 10,
                                        lineCap: .round

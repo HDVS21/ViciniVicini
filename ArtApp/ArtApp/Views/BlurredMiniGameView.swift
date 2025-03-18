@@ -2,92 +2,115 @@
 //  BlurredMiniGameView.swift
 //  ArtApp
 //
-//  Created by Simon Naud on 03/03/25.
+//  Created by Simon Naud on 17/03/25.
 //
 
 import SwiftUI
 
 struct BlurredMiniGameView: View {
+    @Environment(\.dismiss) var dismiss
     
-    var painting : String = "stJohnTheBaptist"
+    let quizDetails =
+        QuickQuiz(question: "Guess the painting behind the blur", painting: "quickQuiz1", answers: ["Waterlilies and japanese bridge", "Japanese bridge", "Waterlily pond, green harmony"], correctAnswer: "Water lilies and japanese bridge")
+   
+    @State private var selectedAnswer: String?
+    @State private var isAnswerCorrect: Bool?
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    @State private var navigateToLesson = false
+    
     @State var blurEffect : CGFloat = 20
-    @State var scores : [Int] = [10, 50, 100]
-    @State var answers : [String : Bool] = [
-        "Pierre Soulages": false,
-        "Leonardo Da Vinci": true,
-        "Pablo Picasso": false,
-    ]
-    
-    @State var selectedAnswer : String? = nil
-    @State var message : String = ""
     
     var body: some View {
-        VStack {
-            if selectedAnswer == nil {
-            Text("Guess the artist")
-                .font(.largeTitle)
-            HStack{
-                    ForEach(scores, id: \.self) { score in
-                        Text("\(score)")
-                            .padding()
-                            .background(Color.yellow)
-                            .clipShape(Circle())
-                    }
+        NavigationStack {
+       
+            VStack(alignment: .center) {
+                QuizHeader(title: "Blurred Masterpiece", lettersColor: "green-letters", backgroundColor: "green-background") {
+                    dismiss()
                 }
-            }
-            Image(painting)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 300)
-                .blur(radius: selectedAnswer != nil ? 0 : blurEffect)
+                VStack{
             
-            if selectedAnswer == nil
-            {
-                if scores.count > 1
-                {  Button( action: {
-                    if blurEffect > 0 {
-                        blurEffect -= 10
+                
+                VStack(alignment: .center, spacing: 10) {
+                    Spacer()
+                    Text(quizDetails.question)
+                        .multilineTextAlignment(.center)
+                        .frame(height: 50)
+                    
+                    Spacer()
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(Color("green-options"))
+                            .frame(width: 280, height: 159)
+                        Image(quizDetails.painting)
+                            .resizable()
+                            .scaledToFill()
+                            .blur(radius: blurEffect)
+                            .frame(width: 280, height: 159)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
-                    if scores.count > 1 {
-                        scores.removeLast()
+                    .clipped()
+               
+                    Button {
+                        blurEffect -= 5
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundColor(blurEffect > 0 ? Color("green-buttons") : Color.gray)
+                                .frame(width: 90, height: 20)
+                                .shadow(radius: 3)
+                            Text("Get a hint")
+                                .font(.caption)
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                        }
                     }
-                }) {
-                    Text("Hint")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                }
-            }
-            if selectedAnswer == nil
-            {
-                ForEach(answers.keys.sorted(), id: \.self) { answer in
-                    Button(action: {
-                        if selectedAnswer == nil {
+                    Spacer()
+                    
+                    ForEach(quizDetails.answers, id: \.self) { answer in
+                        Button(action: {
                             selectedAnswer = answer
-                            if answers[answer] == true {
-                                message = "Congrats! You earned \(scores.last ?? 0) pts"
-                            } else {
-                                message = "You lose"
+                        }) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 16)
+                                    .foregroundColor(selectedAnswer == answer ? Color("green-background") : Color("green-options"))
+                                    .frame(width: 280, height: 53)
+                                Text(answer)
+                                    .foregroundStyle(.black)
                             }
                         }
-                    }) {
-                        Text(answer)
-                            .padding()
-                            .frame(width: 300)
-                            .background(selectedAnswer == answer ? Color.gray : Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
                     }
-                    .disabled(selectedAnswer != nil)
+                    Spacer()
+                    
+                    
+                    Button(action: {
+                        guard let selectedAnswer = selectedAnswer else { return }
+                        isAnswerCorrect = selectedAnswer == quizDetails.correctAnswer
+                
+                        
+                        
+                    }) {
+                        ZStack {
+                            Capsule()
+                                .frame(width: 215, height: 42)
+                                .foregroundStyle(selectedAnswer != nil ? Color("green-buttons") : Color.gray)
+                                .shadow(radius: 3)
+                            Text("Confirm Selection")
+                                .foregroundStyle(.white)
+                                .fontWeight(.semibold)
+                        }
+                    }
                 }
+                
+                
             }
-        }
-        Text(message)
-            .font(.headline)
-            .foregroundColor(.blue)
             .padding()
+        }
+            .navigationBarHidden(true)
+            .edgesIgnoringSafeArea(.top)
+        }
+        .toolbar(.hidden, for: .navigationBar)
         
     }
 }

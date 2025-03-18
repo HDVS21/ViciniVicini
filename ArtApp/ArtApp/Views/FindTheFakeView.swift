@@ -10,42 +10,66 @@ import SwiftUI
 struct FindTheFakeView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var paintings = ["painting1", "painting2", "painting3", "fakePainting"]
+    var paintings = ["ftf1-painting1", "ftf1-painting2", "ftf1-painting3", "ftf1-fakePainting"]
     
     // Estado para manejar la selección del usuario
     @State private var selectedPainting: String? = nil
     @State private var showResult = false
     @State private var isCorrect = false
     
-    @State var fakePainting = "fakePainting"
+    @State var fakePainting = "ftf1-fakePainting"
     
     var body: some View {
-        VStack (alignment: .leading) {
-            LessonHeader(title: "Find the fake", lessonNumber: 0, backgroundImage: "blue-background") {
-                presentationMode.wrappedValue.dismiss()
+        VStack (alignment: .center, spacing: 10) {
+            QuizHeader(title: "Find the fake", lettersColor: "green-letters", backgroundColor: "green-background") {
+             
             }
+            Spacer()
             
             Text("Select the painting that does not belong in this group")
-                .font(.subheadline)
-                .padding()
-            
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                .multilineTextAlignment(.center)
+                
+            Spacer()
+
+            LazyVGrid(columns: [
+                          GridItem(.flexible(), spacing: -20),
+                          GridItem(.flexible(), spacing: -20)
+                      ], spacing: 20) {
                 ForEach(paintings, id: \.self) { painting in
-//                    Image(painting)
-                    Rectangle()
+                    ZStack{
+                        
+                   
+                   
+                        RoundedRectangle(cornerRadius: 16.0)
                         .fill(.gray)
-//                        .resizable()
                         .scaledToFit()
                         .frame(height: 150)
-                        .cornerRadius(16.0)
-                        .border(selectedPainting == painting ? Color.blue : Color.clear, width: 4)
-                        .onTapGesture {
-                            selectedPainting = painting
-                        }
+                        .overlay(
+                        
+                            RoundedRectangle(cornerRadius: 16.0)
+                                .stroke(selectedPainting == painting ? Color("green-background") : Color.clear, lineWidth: 10)
+                        )
+                       
+                        
+                        Image(painting)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 150, height: 150)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .onTapGesture {
+                                    selectedPainting = painting
+                                }
+                }
+                   
+                    .onTapGesture {
+                        selectedPainting = painting
+                    }
                 }
             }
             .padding()
-            
+            Spacer()
+
+
             if selectedPainting != nil {
                 Button(action: {
                     if selectedPainting == fakePainting {
@@ -55,27 +79,32 @@ struct FindTheFakeView: View {
                     }
                     showResult = true
                 }) {
+                    ZStack {
+                        Capsule()
+                            .frame(width: 215, height: 42)
+                            .foregroundStyle(Color("green-buttons"))
+                            .shadow(radius: 3)
+                        Text("Confirm selection")
+                            .font(.headline)
+                            .padding()
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+                }
+            } else {
+                ZStack {
+                    Capsule()
+                        .frame(width: 215, height: 42)
+                        .foregroundStyle(Color.gray)
+                        .shadow(radius: 3)
                     Text("Confirm selection")
                         .font(.headline)
                         .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
                         .foregroundColor(.white)
-                        .cornerRadius(10)
                         .padding()
                 }
-            } else {
-                Text("Confirm selection")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding()
             }
             
-            Spacer()
         }
         .navigationBarHidden(true)
         .edgesIgnoringSafeArea(.top)
