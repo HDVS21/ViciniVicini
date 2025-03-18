@@ -14,13 +14,13 @@ struct IntroductionLesson: View {
     // Lesson details
     let lesson: LessonDetail = LessonDetail(
         id: 1,
-        title: "Introduction to \nMonet",
-        objective: "Get to know Claude Monet, one of the most famous painters in history",
+        title: NSLocalizedString("lesson_title", comment: "Title of the lesson"),
+        objective: NSLocalizedString("lesson_objective", comment: "Objective of the lesson"),
         image: "LessonOne",
         contents: [
-            ("Who Was Claude Monet?", AnyView(WhoWasMonet()), true),
-            ("The Impressionist Technique", AnyView(WhoWasMonet()), false),
-            ("Monet’s Influences", AnyView(WhoWasMonet()), false)
+            (NSLocalizedString("lesson_section_1", comment: "Who was Monet?"), AnyView(WhoWasMonet()), true),
+            (NSLocalizedString("lesson_section_2", comment: "The Impressionist Technique"), AnyView(WhoWasMonet()), false),
+            (NSLocalizedString("lesson_section_3", comment: "Monet’s Influences"), AnyView(WhoWasMonet()), false)
         ]
     )
     

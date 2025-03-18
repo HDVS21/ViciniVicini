@@ -8,86 +8,104 @@
 import SwiftUI
 
 struct FindTheFakeView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     
     var paintings = ["painting1", "painting2", "painting3", "fakePainting"]
     
     // Estado para manejar la selección del usuario
     @State private var selectedPainting: String? = nil
-    @State private var showResult = false
+    @State private var showAlert = false
     @State private var isCorrect = false
+    
     
     @State var fakePainting = "fakePainting"
     
     var body: some View {
-        VStack (alignment: .leading) {
-            LessonHeader(title: "Find the fake", lessonNumber: 0, backgroundImage: "blue-background") {
-                presentationMode.wrappedValue.dismiss()
-            }
-            
-            Text("Select the painting that does not belong in this group")
-                .font(.subheadline)
-                .padding()
-            
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                ForEach(paintings, id: \.self) { painting in
-//                    Image(painting)
-                    Rectangle()
-                        .fill(.gray)
-//                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 150)
-                        .cornerRadius(16.0)
-                        .border(selectedPainting == painting ? Color.blue : Color.clear, width: 4)
-                        .onTapGesture {
-                            selectedPainting = painting
-                        }
+        ZStack {
+            VStack () {
+                QuizHeader(title: "Find the Fake", lettersColor: "green-letters", backgroundColor: "green-background") {
+                    dismiss()
                 }
-            }
-            .padding()
-            
-            if selectedPainting != nil {
-                Button(action: {
-                    if selectedPainting == fakePainting {
-                        isCorrect = true
-                    } else {
-                        isCorrect = false
+                
+                Spacer()
+                
+                Text("Select the painting that does not belong in this group")
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding()
+                
+                Spacer()
+                
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                    ForEach(paintings, id: \.self) { painting in
+    //                    Image(painting)
+                        Rectangle()
+                            .fill(.gray)
+    //                        .resizable()
+    //                        .scaledToFit()
+                            .frame(width: 159 ,height: 159)
+                            .cornerRadius(16.0)
+                            .border(selectedPainting == painting ? Color("green-buttons") : Color.clear, width: 4)
+                            .padding(8)
+                            .onTapGesture {
+                                selectedPainting = painting
+                            }
                     }
-                    showResult = true
-                }) {
-                    Text("Confirm selection")
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
                 }
-            } else {
-                Text("Confirm selection")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding()
+                .padding()
+                
+                Spacer()
+                
+                if selectedPainting != nil {
+                    Button(action: {
+                        if selectedPainting == fakePainting {
+                            isCorrect = true
+                        } else {
+                            isCorrect = false
+                        }
+                        showAlert = true
+                    }) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundStyle(Color("green-buttons"))
+                                .frame(width: 280, height: 60)
+                            Text(isCorrect ? "Next" : "Confirm Selection")
+                                .foregroundStyle(.white)
+                                .bold()
+                            if showAlert {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(.white.opacity(0.5))
+                                    .frame(width: 280, height: 60)
+                            }
+                        }
+                    }
+                } else {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundStyle(Color("green-buttons"))
+                            .frame(width: 280, height: 60)
+                        Text("Confirm Selection")
+                            .foregroundStyle(.white)
+                            .bold()
+                    }
+                }
+                
+                Spacer()
             }
+            .edgesIgnoringSafeArea(.top)
             
-            Spacer()
-        }
-        .navigationBarHidden(true)
-        .edgesIgnoringSafeArea(.top)
-        .alert(isPresented: $showResult) {
-            Alert(
-                title: Text(isCorrect ? "Correct!" : "Incorrect"),
-                message: Text(isCorrect ? "You chose the right answer." : "Try again."),
-                dismissButton: .default(Text("Continue")) {
-                    selectedPainting = nil
+            if showAlert {
+                ZStack {
+                    Rectangle()
+                        .fill(.white.opacity(0.5))
+                        .ignoresSafeArea()
+                    AlertMessage(color: "green", isCorrect: $isCorrect, showAlert: $showAlert, message: ("hola", "mundo"))
                 }
-            )
+            }
         }
+
+        .navigationBarHidden(true)
     }
 }
 
