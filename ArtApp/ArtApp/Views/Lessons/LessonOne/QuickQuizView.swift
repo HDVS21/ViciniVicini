@@ -11,9 +11,9 @@ struct QuickQuizView: View {
     @Environment(\.dismiss) var dismiss
     
     let quizDetails = [
-        QuickQuiz(question: "What type of art influenced Monet’s garden design?", painting: "quickQuiz1", answers: ["Italian Renaissance", "Japanese prints", "Greek sculptures"], correctAnswer: "Japanese prints"),
-        QuickQuiz(question: "What subject did Monet love to paint?", painting: "quickQuiz2", answers: ["Mythological creatures", "Nature & changing light", "Portraits of kings"], correctAnswer: "Nature & changing light"),
-        QuickQuiz(question: "Who was NOT part of Monet’s Impressionist group?", painting: "quickQuiz3", answers: ["Edgar Degas", "Vincent van Gogh", "Pierre-Auguste Renoir"], correctAnswer: "Vincent van Gogh"),
+        QuickQuiz(question: NSLocalizedString("What type of art influenced Monet’s garden design?", comment: ""), painting: "quickQuiz1", answers: [NSLocalizedString("Italian Renaissance", comment: ""), NSLocalizedString("Japanese prints", comment: ""), NSLocalizedString("Greek sculptures", comment: "")], correctAnswer: "Japanese prints"),
+        QuickQuiz(question: NSLocalizedString("What subject did Monet love to paint?", comment: ""), painting: "quickQuiz2", answers: [NSLocalizedString("Mythological creatures", comment: ""), NSLocalizedString("Nature & changing light", comment: ""), NSLocalizedString("Portraits of kings", comment: "")], correctAnswer: "Nature & changing light"),
+        QuickQuiz(question: NSLocalizedString("Who was NOT part of Monet’s Impressionist group?", comment: ""), painting: "quickQuiz3", answers: [NSLocalizedString("Edgar Degas", comment: ""), NSLocalizedString("Vincent van Gogh", comment: ""), NSLocalizedString("Pierre-Auguste Renoir", comment: "")], correctAnswer: "Vincent van Gogh"),
     ]
     
     @State private var currentQuestionIndex = 0
