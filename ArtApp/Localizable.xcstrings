@@ -30,6 +30,12 @@
             "state" : "translated",
             "value" : "Completa el rompecabezas correctamente para restaurar la obra maestra de Monet"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compléter le puzzle pour recréer l’œuvre de Monet "
+          }
         }
       }
     },
@@ -169,6 +175,12 @@
             "state" : "translated",
             "value" : "Conoce a Monet, uno de los pintores más famosos de la historia"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apprendre à connaitre Claude Monet, un des peintres les plus talentueux de son époque"
+          }
         }
       }
     },
@@ -183,7 +195,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Devine l’artiste"
+            "value" : "Devine qui est l’artiste"
           }
         }
       }
@@ -227,6 +239,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Introducción a Claude Monet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduction à Claude Monet"
           }
         }
       }
@@ -293,6 +311,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Influencias de Monet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les influences de Monet"
           }
         }
       }
@@ -401,6 +425,12 @@
             "state" : "translated",
             "value" : "Técnica Impresionista"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La technique impressioniste"
+          }
         }
       }
     },
@@ -410,6 +440,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Intenta de nuevo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essaie encore"
           }
         }
       }
