@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct WhoWasMonet: View {
-    // Enables back navigation
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var path: NavigationPath
     
     // Lesson details
     let sublesson: sublessonDetail = sublessonDetail(
@@ -22,9 +21,7 @@ struct WhoWasMonet: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            SublessonHeader(title: sublesson.title, lettersColor: sublesson.lettersColor, backgroundColor: sublesson.backgroundColor) {
-                presentationMode.wrappedValue.dismiss()
-            }
+            SublessonHeader(title: sublesson.title, lettersColor: sublesson.lettersColor, backgroundColor: sublesson.backgroundColor, path: $path)
             
             VStack( spacing: 20) {
                 // Image placeholder
@@ -45,8 +42,10 @@ struct WhoWasMonet: View {
                     .foregroundColor(.black)
                     .padding(.horizontal, 30)
                 
-                // Quiz Button
-                NavigationLink(destination: QuickQuizView()) {
+                // Quiz Button (Using NavigationPath)
+                Button(action: {
+                    path.append("QuickQuiz")
+                }) {
                     Text("Next")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -68,5 +67,5 @@ struct WhoWasMonet: View {
 }
 
 #Preview {
-    WhoWasMonet()
+    WhoWasMonet(path: .constant(NavigationPath()))
 }

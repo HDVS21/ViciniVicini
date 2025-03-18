@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BlurredMiniGameView: View {
-    @Environment(\.dismiss) var dismiss
+    @Binding var path: NavigationPath
     
     let quizDetails =
         QuickQuiz(question: "Guess the painting behind the blur", painting: "quickQuiz1", answers: ["Waterlilies and japanese bridge", "Japanese bridge", "Waterlily pond, green harmony"], correctAnswer: "Water lilies and japanese bridge")
@@ -25,9 +25,7 @@ struct BlurredMiniGameView: View {
         NavigationStack {
        
             VStack(alignment: .center) {
-                QuizHeader(title: "Blurred Masterpiece", lettersColor: "green-letters", backgroundColor: "green-background") {
-                    dismiss()
-                }
+                QuizHeader(title: "Blurred Masterpiece", lettersColor: "green-letters", backgroundColor: "green-background", path: $path)
                 VStack{
             
                 
@@ -117,5 +115,5 @@ struct BlurredMiniGameView: View {
 
 
 #Preview {
-    BlurredMiniGameView()
+    BlurredMiniGameView(path: .constant(NavigationPath()))
 }

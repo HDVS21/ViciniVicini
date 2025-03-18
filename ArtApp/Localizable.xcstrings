@@ -357,6 +357,7 @@
     },
     "Monet’s Influences" : {
       "comment" : "Monet’s Influences",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -468,6 +469,9 @@
         }
       }
     },
+    "Page Not Found" : {
+
+    },
     "Pierre-Auguste Renoir" : {
 
     },
@@ -521,6 +525,7 @@
     },
     "The Impressionist Technique" : {
       "comment" : "The Impressionist Technique",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -589,6 +594,7 @@
     },
     "Who was Monet?" : {
       "comment" : "Who was Monet?",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {

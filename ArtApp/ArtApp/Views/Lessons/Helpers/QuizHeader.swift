@@ -11,7 +11,8 @@ struct QuizHeader: View {
     let title: String
     let lettersColor: String
     let backgroundColor: String
-    let onBack: () -> Void
+    
+    @Binding var path: NavigationPath
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -21,7 +22,7 @@ struct QuizHeader: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Button(action: {
-                    onBack()
+                    path.removeLast()
                 }) {
                     Image(systemName: "arrow.left")
                         .foregroundColor(Color(lettersColor))
@@ -44,12 +45,10 @@ struct QuizHeader: View {
 }
 
 #Preview {
-    @Previewable @Environment(\.presentationMode) var presentationMode
     QuizHeader(
         title: "Find the fake",
         lettersColor: "green-letters",
-        backgroundColor: "green-background"
-    ) {
-        presentationMode.wrappedValue.dismiss()
-    }
+        backgroundColor: "green-background",
+        path: .constant(NavigationPath())
+    )
 }

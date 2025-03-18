@@ -11,7 +11,8 @@ struct SublessonHeader: View {
     let title: String
     let lettersColor: String
     let backgroundColor: String
-    let onBack: () -> Void
+    
+    @Binding var path: NavigationPath
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -21,7 +22,7 @@ struct SublessonHeader: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Button(action: {
-                    onBack()
+                    path.removeLast()
                 }) {
                     Image(systemName: "arrow.left")
                         .foregroundColor(Color(lettersColor))
@@ -44,12 +45,10 @@ struct SublessonHeader: View {
 }
 
 #Preview {
-    @Previewable @Environment(\.presentationMode) var presentationMode
     SublessonHeader(
         title: "Introduction to Monet",
         lettersColor: "blue-letters",
-        backgroundColor: "blue-background"
-    ) {
-        presentationMode.wrappedValue.dismiss()
-    }
+        backgroundColor: "blue-background",
+        path: .constant(NavigationPath())
+    )
 }

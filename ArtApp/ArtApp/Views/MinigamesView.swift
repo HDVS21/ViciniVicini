@@ -80,7 +80,7 @@ struct MinigameDestinationView: View {
         case 1:
             FindTheFakeView()
         case 2:
-            BlurredMiniGameView()
+            BlurredMiniGameView(path: .constant(NavigationPath()))
         default:
             DefaultMinigameView()
         }

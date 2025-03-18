@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct DragDropMinigame: View {
-    @Environment(\.dismiss) var dismiss
     @State var showAlert = false
     @State var isCorrect: Bool = false
     @State var alertShowed = false
     
+    @Binding var path: NavigationPath
+    
     var body: some View {
         VStack {
-            QuizHeader(title: "Piece by Piece", lettersColor: "green-letters", backgroundColor: "green-background") {
-                dismiss()
-            }
+            QuizHeader(title: "Piece by Piece", lettersColor: "green-letters", backgroundColor: "green-background", path: $path)
             
             Text("Complete the puzzle correctly to restore Monet’s masterpiece")
                 .multilineTextAlignment(.center)
@@ -55,5 +54,5 @@ struct DragDropMinigame: View {
 }
 
 #Preview {
-    DragDropMinigame()
+    DragDropMinigame(path: .constant(NavigationPath()))
 }

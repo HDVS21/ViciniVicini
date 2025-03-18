@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IntroductionLesson: View {
     // Enables back navigation
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var path: NavigationPath
     
     // Lesson details
     let lesson: LessonDetail = LessonDetail(
@@ -18,17 +18,15 @@ struct IntroductionLesson: View {
         objective: NSLocalizedString("Get to know Claude Monet, one of the most famous painters in the history", comment: "Objective of the lesson"),
         image: "LessonOne",
         contents: [
-            (NSLocalizedString("Who was Monet?", comment: "Who was Monet?"), AnyView(WhoWasMonet()), true),
-            (NSLocalizedString("The Impressionist Technique", comment: "The Impressionist Technique"), AnyView(WhoWasMonet()), false),
-            (NSLocalizedString("Monet’s Influences", comment: "Monet’s Influences"), AnyView(WhoWasMonet()), false)
+            ("Who was Monet?", "WhoWasMonet", true),
+            ("The Impressionist Technique", "ImpressionistTechnique", false),
+            ("Monet’s Influences", "MonetInfluences", false)
         ]
     )
     
     var body: some View {
         VStack(alignment: .leading) {
-            LessonHeader(title: lesson.title, lessonNumber: lesson.id, backgroundImage: lesson.image) {
-                presentationMode.wrappedValue.dismiss()
-            }
+            LessonHeader(title: lesson.title, lessonNumber: lesson.id, backgroundImage: lesson.image, path: $path)
             
             VStack(alignment: .leading, spacing: 16) {
                 Text("Objective")
@@ -47,7 +45,7 @@ struct IntroductionLesson: View {
                     .font(.headline)
                     .bold()
                 
-                ContentListView(contents: lesson.contents)
+                ContentListView(contents: lesson.contents, path: $path)
             }
             .padding()
             Spacer()
@@ -58,38 +56,42 @@ struct IntroductionLesson: View {
 }
 
 struct ContentListView: View {
-    let contents: [(title: String, view: AnyView, isChecked: Bool)]
+    let contents: [(title: String, viewIdentifier: String, isChecked: Bool)]
+    @Binding var path: NavigationPath
     
     var body: some View {
-        VStack(spacing: 0) {
-            ForEach(contents.indices, id: \.self) { index in
-                let content = contents[index]
-                NavigationLink(destination: content.view) {
-                    HStack {
-                        // Checkbox
-                        Image(systemName: content.isChecked ? "checkmark.square.fill" : "square")
-                            .foregroundColor(Color("blue-letters"))
-                        Text(content.title)
-                            .font(.body)
-                            .foregroundColor(Color("blue-letters"))
-                        
-                        Spacer()
-                        
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(Color("blue-letters"))
+            VStack(spacing: 0) {
+                ForEach(contents.indices, id: \.self) { index in
+                    let content = contents[index]
+                    Button(action: {
+                        // Use title as navigation identifier/
+                        path.append(content.viewIdentifier)
+                    }) {
+                        HStack {
+                            Image(systemName: content.isChecked ? "checkmark.square.fill" : "square")
+                                .foregroundColor(Color("blue-letters"))
+
+                            Text(content.title)
+                                .font(.body)
+                                .foregroundColor(Color("blue-letters"))
+
+                            Spacer()
+
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(Color("blue-letters"))
+                        }
+                        .padding()
+                        .background(Color("blue-light"))
                     }
-                    .padding()
-                    .background(Color("blue-light"))
+                    Divider()
                 }
-                Divider()
             }
+            .navigationBarHidden(true)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
         }
-        .navigationBarHidden(true)
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-    }
 }
-                
+
 
 #Preview {
-    IntroductionLesson()
+    IntroductionLesson(path: .constant(NavigationPath()))
 }

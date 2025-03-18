@@ -11,7 +11,8 @@ struct LessonHeader: View {
     let title: String
     let lessonNumber: Int
     let backgroundImage: String
-    let onBack: () -> Void
+    
+    @Binding var path: NavigationPath
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -29,7 +30,7 @@ struct LessonHeader: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Button(action: {
-                    onBack()
+                    path.removeLast()
                 }) {
                     Image(systemName: "arrow.left")
                         .foregroundColor(Color("blue-letters"))
@@ -61,8 +62,7 @@ struct LessonHeader: View {
     LessonHeader(
         title: "Introduction to Monet",
         lessonNumber: 1,
-        backgroundImage: "LessonOne"
-    ) {
-        presentationMode.wrappedValue.dismiss()
-    }
+        backgroundImage: "LessonOne",
+        path: .constant(NavigationPath())
+    )
 }

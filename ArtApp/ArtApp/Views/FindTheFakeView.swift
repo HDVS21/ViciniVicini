@@ -22,9 +22,7 @@ struct FindTheFakeView: View {
     var body: some View {
         ZStack {
             VStack () {
-                QuizHeader(title: "Find the Fake", lettersColor: "green-letters", backgroundColor: "green-background") {
-                    dismiss()
-                }
+                QuizHeader(title: "Find the Fake", lettersColor: "green-letters", backgroundColor: "green-background", path: .constant(NavigationPath()))
                 
                 Spacer()
                 
