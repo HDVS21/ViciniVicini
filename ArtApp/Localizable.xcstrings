@@ -9,6 +9,12 @@
     },
     "Check Answers" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisar Respuesta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19,6 +25,12 @@
     },
     "Confirm selection" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmar selección"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29,6 +41,12 @@
     },
     "Confirm Selection" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmar Selección"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -39,6 +57,12 @@
     },
     "Content" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contenido"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -49,6 +73,12 @@
     },
     "Continue" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59,6 +89,12 @@
     },
     "Correct!" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Correcto!"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -69,6 +105,12 @@
     },
     "Error" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -79,6 +121,12 @@
     },
     "Error! Try again." : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Error! Intenta de nuevo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -89,6 +137,12 @@
     },
     "Finish Quiz" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminar Quiz"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -99,6 +153,12 @@
     },
     "Get a hint" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obtener pista"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -109,6 +169,12 @@
     },
     "Guess the artist" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adivina el artista"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -119,6 +185,12 @@
     },
     "Hint" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pista"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -129,6 +201,12 @@
     },
     "Incorrect" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incorrecto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -139,6 +217,12 @@
     },
     "Incorrect!" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Incorrecto!"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -223,6 +307,12 @@
     },
     "Next" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -233,6 +323,12 @@
     },
     "Next Question" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente Pregunta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -243,6 +339,12 @@
     },
     "Objective" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Objetivo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -253,6 +355,12 @@
     },
     "OK" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -263,6 +371,12 @@
     },
     "Select the painting that does not belong in this group" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona la pintura que no pertenece al grupo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -273,6 +387,12 @@
     },
     "Success! All matches are correct." : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Éxito! Todas las coincidencias son correctas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -283,6 +403,12 @@
     },
     "Try again." : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intentar de nuevo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -293,6 +419,12 @@
     },
     "You chose the right answer." : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige la respuesta correcta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
