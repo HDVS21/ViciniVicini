@@ -103,6 +103,9 @@
         }
       }
     },
+    "Edgar Degas" : {
+
+    },
     "Error" : {
       "localizations" : {
         "es" : {
@@ -184,6 +187,16 @@
         }
       }
     },
+    "Greek sculptures" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sculptures Grecques "
+          }
+        }
+      }
+    },
     "Guess the artist" : {
       "localizations" : {
         "es" : {
@@ -245,6 +258,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Introduction à Claude Monet"
+          }
+        }
+      }
+    },
+    "Italian Renaissance" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renaissance italienne"
+          }
+        }
+      }
+    },
+    "Japanese prints" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estampes Japonaises"
           }
         }
       }
@@ -321,6 +354,26 @@
         }
       }
     },
+    "Mythological creatures" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créatures Mythologiques"
+          }
+        }
+      }
+    },
+    "Nature & changing light" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nature & lumière"
+          }
+        }
+      }
+    },
     "Next" : {
       "localizations" : {
         "es" : {
@@ -381,6 +434,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        }
+      }
+    },
+    "Pierre-Auguste Renoir" : {
+
+    },
+    "Portraits of kings" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portraits de rois"
           }
         }
       }
@@ -450,6 +516,29 @@
         }
       }
     },
+    "Vincent van Gogh" : {
+
+    },
+    "What subject did Monet love to paint?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel sujet Claude Monet aimait peindre ? "
+          }
+        }
+      }
+    },
+    "What type of art influenced Monet’s garden design?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel genre d’art a influencé l’aménagement du jardin de l’artiste ?"
+          }
+        }
+      }
+    },
     "Who was Monet?" : {
       "comment" : "Who was Monet?",
       "localizations" : {
@@ -457,6 +546,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Quién era Monet?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui était Claude Monet ? "
+          }
+        }
+      }
+    },
+    "Who was NOT part of Monet’s Impressionist group?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qui ne faisait pas partie du groupe d’impressionniste de Monet ? "
           }
         }
       }
