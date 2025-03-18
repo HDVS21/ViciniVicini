@@ -189,6 +189,12 @@
     },
     "Greek sculptures" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esculturas griegas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -264,6 +270,12 @@
     },
     "Italian Renaissance" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renacimiento Italiano"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -274,6 +286,12 @@
     },
     "Japanese prints" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pintura Japonesa"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -356,6 +374,12 @@
     },
     "Mythological creatures" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creaturas mitologicas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -366,6 +390,12 @@
     },
     "Nature & changing light" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naturaleza y cambios de iluminación"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -443,6 +473,12 @@
     },
     "Portraits of kings" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retratos de reyes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -521,6 +557,12 @@
     },
     "What subject did Monet love to paint?" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué tema le encantaba pintar a Monet?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -531,6 +573,12 @@
     },
     "What type of art influenced Monet’s garden design?" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué tipo de arte influenció el diseño del Jardín de Monet?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -558,6 +606,12 @@
     },
     "Who was NOT part of Monet’s Impressionist group?" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Quién NO pertenecía al grupo impresionista de Monet?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
