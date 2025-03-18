@@ -10,13 +10,12 @@ import SwiftUI
 struct FindTheFakeView: View {
     @Environment(\.dismiss) var dismiss
     
-    var paintings = ["painting1", "painting2", "painting3", "fakePainting"]
+    var paintings = ["ftf1-painting1", "ftf1-painting2", "ftf1-painting3", "ftf1-fakePainting"]
     
     // Estado para manejar la selección del usuario
     @State private var selectedPainting: String? = nil
     @State private var showAlert = false
     @State private var isCorrect = false
-    
     
     @State var fakePainting = "fakePainting"
     

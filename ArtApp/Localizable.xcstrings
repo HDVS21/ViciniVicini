@@ -9,146 +9,153 @@
     },
     "Check Answers" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Revisar Respuestas"
-          }
-        }
-      }
-    },
-    "Complete the puzzle correctly to restore Monet’s masterpiece" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Completa el rompecabezas correctamente para restaurar la obra maestra de Monet."
+            "value" : "Vérifier les réponses"
           }
         }
       }
     },
     "Confirm selection" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Confirmar selección"
+            "value" : "Confirmer la sélection"
           }
         }
       }
     },
     "Confirm Selection" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Confirmar selección"
+            "value" : "Confirmer la sélection"
           }
         }
       }
     },
     "Content" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Contenido"
+            "value" : "Contenu"
           }
         }
       }
     },
     "Continue" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Continuar"
+            "value" : "Continuer"
           }
         }
       }
     },
     "Correct!" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¡Correcto!"
+            "value" : "Correct !"
           }
         }
       }
     },
     "Error" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error"
+            "value" : "Erreur "
           }
         }
       }
     },
     "Error! Try again." : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error! Intenta de nuevo"
+            "value" : "Erreur ! Essaie encore."
           }
         }
       }
     },
     "Finish Quiz" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Termina el Quiz"
+            "value" : "Terminer le quiz"
+          }
+        }
+      }
+    },
+    "Get a hint" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obtenir un indice"
           }
         }
       }
     },
     "Guess the artist" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adivina el artista"
+            "value" : "Devine l’artiste"
           }
         }
       }
     },
     "Hint" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pista"
+            "value" : "Indice"
           }
         }
       }
     },
     "Incorrect" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Incorrecto"
+            "value" : "Incorrect"
           }
         }
       }
     },
     "Incorrect!" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Incorrecto!"
+            "value" : "Incorrect !"
           }
         }
       }
     },
     "Lesson %lld" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leçon %lld"
+          }
+        }
+      }
     },
     "lesson_objective" : {
       "comment" : "Objective of the lesson"
@@ -183,10 +190,10 @@
     },
     "Lessons" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lecciones"
+            "value" : "Leçons"
           }
         }
       }
@@ -195,44 +202,58 @@
 
     },
     "Minigame not available" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mini-jeu indisponible "
+          }
+        }
+      }
     },
     "Monet Picture" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image de Monet"
+          }
+        }
+      }
     },
     "Next" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Siguiente"
+            "value" : "Suivant"
           }
         }
       }
     },
     "Next Question" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Siguiente Pregunta"
+            "value" : "Question suivante "
           }
         }
       }
     },
     "Objective" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Objetivo"
+            "value" : "Objectif "
           }
         }
       }
     },
     "OK" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -242,50 +263,40 @@
     },
     "Select the painting that does not belong in this group" : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selecciona la pintura que no pertenece a este grupo"
+            "value" : "Sélectionner la peinture qui ne fait pas partie de ce groupe"
           }
         }
       }
     },
     "Success! All matches are correct." : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¡Éxito! Todas las coincidencias son correctas"
-          }
-        }
-      }
-    },
-    "Try Again" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Intenta de nuevo"
+            "value" : "Bien joué! Toutes les paires sont correctes"
           }
         }
       }
     },
     "Try again." : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Intenta de nuevo."
+            "value" : "Essaie encore "
           }
         }
       }
     },
     "You chose the right answer." : {
       "localizations" : {
-        "es" : {
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elige la respuesta correcta"
+            "value" : "C’est la bonne réponse "
           }
         }
       }

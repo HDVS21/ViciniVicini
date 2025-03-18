@@ -13,31 +13,34 @@ struct SectionTileView: View {
                 Image(sectionImage)
                     .resizable()
                     .scaledToFill()
-                    .frame(height: 150)
+                    .frame(height: 130)
                     .saturation(isUnlocked ? 1 : 0.1)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .overlay(
                         RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.black.opacity(0.3))
+                            .fill(Color.white.opacity(0.5))
                     )
                 
                 HStack() {
                     HStack {
+                        
                         CircleProgressView(userProgress: userProgress)
                             .frame(width: 70, height: 70)
-//                        Spacer()
+                            .padding()
                     }
                     .padding(.horizontal)
                     
                     VStack(alignment: .leading) {
                         Text(sectionCategory)
-                            .font(.headline)
-                            .foregroundStyle(.white)
+                            .font(.subheadline)
+                            .foregroundStyle(.black)
                         Text(sectionTitle)
-                            .font(.largeTitle)
-                            .foregroundStyle(.white)
-                            .fontWeight(.bold)
+                            .font(.title2)
+                            .foregroundStyle(Color("blue-letters"))
+                            .fontWeight(.heavy)
                             .multilineTextAlignment(.leading)
+                            .padding(.trailing)
+                        
                     }
                     
                     Spacer()
