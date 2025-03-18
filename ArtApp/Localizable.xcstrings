@@ -439,7 +439,14 @@
       }
     },
     "Pierre-Auguste Renoir" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rfhjbfk,a"
+          }
+        }
+      }
     },
     "Portraits of kings" : {
       "localizations" : {
