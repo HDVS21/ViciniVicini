@@ -23,18 +23,12 @@
         }
       }
     },
-    "Confirm selection" : {
+    "Complete the puzzle correctly to restore Monet’s masterpiece" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Confirmar selección"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Confirmer la sélection"
+            "value" : "Completa el rompecabezas correctamente para restaurar la obra maestra de Monet"
           }
         }
       }
@@ -167,6 +161,17 @@
         }
       }
     },
+    "Get to know Claude Monet, one of the most famous painters in the history" : {
+      "comment" : "Objective of the lesson",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conoce a Monet, uno de los pintores más famosos de la historia"
+          }
+        }
+      }
+    },
     "Guess the artist" : {
       "localizations" : {
         "es" : {
@@ -199,22 +204,6 @@
         }
       }
     },
-    "Incorrect" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Incorrecto"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Incorrect"
-          }
-        }
-      }
-    },
     "Incorrect!" : {
       "localizations" : {
         "es" : {
@@ -231,8 +220,25 @@
         }
       }
     },
+    "Introduction to Claude Monet" : {
+      "comment" : "Title of the lesson",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introducción a Claude Monet"
+          }
+        }
+      }
+    },
     "Lesson %lld" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lección"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -241,39 +247,14 @@
         }
       }
     },
-    "lesson_objective" : {
-      "comment" : "Objective of the lesson"
-    },
-    "lesson_section_1" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Quien era Monet?"
-          }
-        }
-      }
-    },
-    "lesson_section_2" : {
-      "comment" : "The Impressionist Technique"
-    },
-    "lesson_section_3" : {
-      "comment" : "Monet’s Influences"
-    },
-    "lesson_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Introduction to \\nMonet"
-          }
-        }
-      }
-    },
     "Lessons" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecciones"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -301,6 +282,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Image de Monet"
+          }
+        }
+      }
+    },
+    "Monet’s Influences" : {
+      "comment" : "Monet’s Influences",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Influencias de Monet"
           }
         }
       }
@@ -401,34 +393,34 @@
         }
       }
     },
-    "Try again." : {
+    "The Impressionist Technique" : {
+      "comment" : "The Impressionist Technique",
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Intentar de nuevo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Essaie encore "
+            "value" : "Técnica Impresionista"
           }
         }
       }
     },
-    "You chose the right answer." : {
+    "Try Again" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elige la respuesta correcta"
+            "value" : "Intenta de nuevo"
           }
-        },
-        "fr" : {
+        }
+      }
+    },
+    "Who was Monet?" : {
+      "comment" : "Who was Monet?",
+      "localizations" : {
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "C’est la bonne réponse "
+            "value" : "¿Quién era Monet?"
           }
         }
       }
