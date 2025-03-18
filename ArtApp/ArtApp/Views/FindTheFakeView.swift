@@ -8,115 +8,103 @@
 import SwiftUI
 
 struct FindTheFakeView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     
     var paintings = ["ftf1-painting1", "ftf1-painting2", "ftf1-painting3", "ftf1-fakePainting"]
     
     // Estado para manejar la selección del usuario
     @State private var selectedPainting: String? = nil
-    @State private var showResult = false
+    @State private var showAlert = false
     @State private var isCorrect = false
     
-    @State var fakePainting = "ftf1-fakePainting"
+    @State var fakePainting = "fakePainting"
     
     var body: some View {
-        VStack (alignment: .center, spacing: 10) {
-            QuizHeader(title: "Find the fake", lettersColor: "green-letters", backgroundColor: "green-background") {
-             
-            }
-            Spacer()
-            
-            Text("Select the painting that does not belong in this group")
-                .multilineTextAlignment(.center)
+        ZStack {
+            VStack () {
+                QuizHeader(title: "Find the Fake", lettersColor: "green-letters", backgroundColor: "green-background") {
+                    dismiss()
+                }
                 
-            Spacer()
-
-            LazyVGrid(columns: [
-                          GridItem(.flexible(), spacing: -20),
-                          GridItem(.flexible(), spacing: -20)
-                      ], spacing: 20) {
-                ForEach(paintings, id: \.self) { painting in
-                    ZStack{
-                        
-                   
-                   
-                        RoundedRectangle(cornerRadius: 16.0)
-                        .fill(.gray)
-                        .scaledToFit()
-                        .frame(height: 150)
-                        .overlay(
-                        
-                            RoundedRectangle(cornerRadius: 16.0)
-                                .stroke(selectedPainting == painting ? Color("green-background") : Color.clear, lineWidth: 10)
-                        )
-                       
-                        
-                        Image(painting)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 150, height: 150)
-                                .clipShape(RoundedRectangle(cornerRadius: 16))
-                                .onTapGesture {
-                                    selectedPainting = painting
-                                }
-                }
-                   
-                    .onTapGesture {
-                        selectedPainting = painting
+                Spacer()
+                
+                Text("Select the painting that does not belong in this group")
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding()
+                
+                Spacer()
+                
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                    ForEach(paintings, id: \.self) { painting in
+    //                    Image(painting)
+                        Rectangle()
+                            .fill(.gray)
+    //                        .resizable()
+    //                        .scaledToFit()
+                            .frame(width: 159 ,height: 159)
+                            .cornerRadius(16.0)
+                            .border(selectedPainting == painting ? Color("green-buttons") : Color.clear, width: 4)
+                            .padding(8)
+                            .onTapGesture {
+                                selectedPainting = painting
+                            }
                     }
                 }
-            }
-            .padding()
-            Spacer()
-
-
-            if selectedPainting != nil {
-                Button(action: {
-                    if selectedPainting == fakePainting {
-                        isCorrect = true
-                    } else {
-                        isCorrect = false
+                .padding()
+                
+                Spacer()
+                
+                if selectedPainting != nil {
+                    Button(action: {
+                        if selectedPainting == fakePainting {
+                            isCorrect = true
+                        } else {
+                            isCorrect = false
+                        }
+                        showAlert = true
+                    }) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundStyle(Color("green-buttons"))
+                                .frame(width: 280, height: 60)
+                            Text(isCorrect ? "Next" : "Confirm Selection")
+                                .foregroundStyle(.white)
+                                .bold()
+                            if showAlert {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(.white.opacity(0.5))
+                                    .frame(width: 280, height: 60)
+                            }
+                        }
                     }
-                    showResult = true
-                }) {
+                } else {
                     ZStack {
-                        Capsule()
-                            .frame(width: 215, height: 42)
+                        RoundedRectangle(cornerRadius: 20)
                             .foregroundStyle(Color("green-buttons"))
-                            .shadow(radius: 3)
-                        Text("Confirm selection")
-                            .font(.headline)
-                            .padding()
-                            .foregroundColor(.white)
-                            .padding()
+                            .frame(width: 280, height: 60)
+                        Text("Confirm Selection")
+                            .foregroundStyle(.white)
+                            .bold()
                     }
                 }
-            } else {
+                
+                Spacer()
+            }
+            .edgesIgnoringSafeArea(.top)
+            
+            if showAlert {
                 ZStack {
-                    Capsule()
-                        .frame(width: 215, height: 42)
-                        .foregroundStyle(Color.gray)
-                        .shadow(radius: 3)
-                    Text("Confirm selection")
-                        .font(.headline)
-                        .padding()
-                        .foregroundColor(.white)
-                        .padding()
+                    Rectangle()
+                        .fill(.white.opacity(0.5))
+                        .ignoresSafeArea()
+                    AlertMessage(color: "green", isCorrect: $isCorrect, showAlert: $showAlert, message: ("hola", "mundo"))
                 }
             }
-            
         }
+
         .navigationBarHidden(true)
-        .edgesIgnoringSafeArea(.top)
-        .alert(isPresented: $showResult) {
-            Alert(
-                title: Text(isCorrect ? "Correct!" : "Incorrect"),
-                message: Text(isCorrect ? "You chose the right answer." : "Try again."),
-                dismissButton: .default(Text("Continue")) {
-                    selectedPainting = nil
-                }
-            )
-        }
     }
 }
 
