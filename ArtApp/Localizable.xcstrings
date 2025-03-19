@@ -236,6 +236,9 @@
         }
       }
     },
+    "Impressionism" : {
+
+    },
     "Incorrect!" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -348,6 +351,7 @@
       }
     },
     "Monet Picture" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -472,6 +476,9 @@
         }
       }
     },
+    "Other movements" : {
+
+    },
     "Page Not Found" : {
 
     },
@@ -525,6 +532,9 @@
           }
         }
       }
+    },
+    "The Impresionist Technique" : {
+
     },
     "The Impressionist Technique" : {
       "comment" : "The Impressionist Technique",
