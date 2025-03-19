@@ -117,9 +117,14 @@ struct QuickQuizView: View {
             .edgesIgnoringSafeArea(.top)
             
             if showAlert {
-                AlertMessage(color: "pink", isCorrect: $isAnswerCorrect, showAlert: $showAlert, message: ("", ""))
-                    .frame(width: 260, height: 140)
-                    .transition(.scale)
+                ZStack{
+                    Rectangle()
+                        .fill(.white.opacity(0.5))
+                        .ignoresSafeArea()
+                    AlertMessage(color: "pink", isCorrect: $isAnswerCorrect, showAlert: $showAlert, message: ("", ""))
+                        .frame(width: 260, height: 140)
+                        .transition(.scale)
+                }
             }
         }
     }
