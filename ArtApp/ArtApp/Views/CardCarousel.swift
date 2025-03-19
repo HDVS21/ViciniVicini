@@ -9,24 +9,26 @@ import SwiftUI
 
 struct CardCarousel: View {
     
-    @State private var currentCard: String = ""
-    @State private var listOfCards: [Card] = []
+    let cards: [Card]
     
+    @State private var currentCard: String = ""
     @State private var fakedCards: [Card] = []
+    
     var body: some View {
-        GeometryReader {
-            let size = $0.size
+        GeometryReader { geometry in
+            let size = geometry.size
             VStack {
-                TabView(selection: $currentCard, content: {
-                    ForEach(fakedCards) { Card in
-                        Rectangle()
-                            .fill(Card.color)
-                            .cornerRadius(16)
-                            .frame(width: 200, height: 240)
-                            .tag(Card.id.uuidString)
-                            .offsetX(currentCard == Card.id.uuidString) { rect in
+                TabView(selection: $currentCard) {
+                    ForEach(fakedCards) { card in
+                        Image(card.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 260, height: 156)
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .tag(card.id.uuidString)
+                            .offsetX(currentCard == card.id.uuidString) { rect in
                                 let minX = rect.minX
-                                let cardOffset = minX - (size.width * CGFloat(fakeIndex(Card)))
+                                let cardOffset = minX - (size.width * CGFloat(fakeIndex(card)))
                                 let cardProgress = cardOffset / size.width
                                 
                                 if -cardProgress < 1.0 {
@@ -42,32 +44,31 @@ struct CardCarousel: View {
                                 }
                             }
                     }
-                })
+                }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 
-                PageControl(totalCards: listOfCards.count, currentCard: originalIndex(currentCard))
+                PageControl(totalCards: cards.count, currentCard: originalIndex(currentCard))
             }
-            
         }
-        .frame(height: 300)
-        
+        .frame(height: 180)
         .onAppear {
-            guard fakedCards.isEmpty else { return }
-            for color in [Color.blueBackground, Color.blueBackground, Color.blueBackground, Color.blueBackground, Color.blueBackground] {
-                listOfCards.append(.init(color: color))
-            }
+            setupFakedCards()
+        }
+    }
+    
+    private func setupFakedCards() {
+        guard fakedCards.isEmpty else { return }
+        
+        fakedCards = cards
+        
+        if var firstCard = cards.first, var lastCard = cards.last {
+            currentCard = firstCard.id.uuidString
             
-            fakedCards.append(contentsOf: listOfCards)
+            firstCard.id = UUID()
+            lastCard.id = UUID()
             
-            if var firstCard = listOfCards.first, var lastCard = listOfCards.last {
-                currentCard = firstCard.id.uuidString
-                
-                firstCard.id = .init()
-                lastCard.id = .init()
-                
-                fakedCards.append(firstCard)
-                fakedCards.insert(lastCard, at: 0)
-            }
+            fakedCards.append(firstCard)
+            fakedCards.insert(lastCard, at: 0)
         }
     }
     
@@ -76,12 +77,12 @@ struct CardCarousel: View {
     }
     
     func originalIndex(_ id: String) -> Int {
-        return listOfCards.firstIndex { card in
+        return cards.firstIndex { card in
             card.id.uuidString == id
         } ?? 0
     }
 }
 
-#Preview {
-    CardCarousel()
-}
+//#Preview {
+//    CardCarousel(cards: <#[Card]#>)
+//}

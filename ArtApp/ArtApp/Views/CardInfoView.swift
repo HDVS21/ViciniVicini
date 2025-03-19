@@ -21,7 +21,7 @@ struct CardInfoView: View {
             
             Spacer()
             
-            CardCarousel()
+//            CardCarousel()
             
             Spacer()
             

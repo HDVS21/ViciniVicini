@@ -24,15 +24,10 @@ struct WhoWasMonet: View {
             SublessonHeader(title: sublesson.title, lettersColor: sublesson.lettersColor, backgroundColor: sublesson.backgroundColor, path: $path)
             
             VStack( spacing: 20) {
-                // Image placeholder
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(Color("blue-light"))
+                Image("Monet Picture")
+                    .resizable()
+                    .cornerRadius(16)
                     .frame(width: 180, height: 220)
-                    .overlay(
-                        Text("Monet Picture")
-                            .foregroundColor(.gray)
-                            .font(.caption)
-                    )
                 
                 
                 // Description text

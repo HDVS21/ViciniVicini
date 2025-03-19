@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Card: Identifiable, Hashable {
-    var id: UUID = .init()
-    var color: Color
+struct Card: Identifiable, Equatable {
+    var id = UUID()
+    var imageName: String
 }

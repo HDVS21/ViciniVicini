@@ -16,10 +16,10 @@ struct SectionView: View {
             ScrollView {
                 VStack(spacing: 5) {
                     SectionTileView(sectionTitle: "Introduction to Monet", sectionCategory: "Lesson 1", sectionImage: "LessonOne", isUnlocked: true, userProgress: 0.35, path: $navigationPath);
-                    SectionTileView(sectionTitle: "Monet's Famous Works", sectionCategory: "Lesson 2", sectionImage: "LessonTwo", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
-                    SectionTileView(sectionTitle: "Monet's Garden in Giverny", sectionCategory: "Lesson 3", sectionImage: "classicism", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
-                    SectionTileView(sectionTitle: "The Challenge of Impressionism", sectionCategory: "Lesson 4", sectionImage: "stJohnTheBaptist", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
-                    SectionTileView(sectionTitle: "Monet and Nature", sectionCategory: "Lesson 5", sectionImage: "classicism", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
+                    SectionTileView(sectionTitle: "Monet's Famous Works", sectionCategory: "Lesson 2", sectionImage: "Monet's Garden 2", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
+                    SectionTileView(sectionTitle: "Monet's Garden in Giverny", sectionCategory: "Lesson 3", sectionImage: "Monet's Garden 3", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
+                    SectionTileView(sectionTitle: "The Challenge of Impressionism", sectionCategory: "Lesson 4", sectionImage: "Monet's Garden 4", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
+                    SectionTileView(sectionTitle: "Monet and Nature", sectionCategory: "Lesson 5", sectionImage: "Monet's Garden 5", isUnlocked: false, userProgress: 0.0, path: $navigationPath);
                     
                 }
                 .padding()
@@ -32,8 +32,18 @@ struct SectionView: View {
                     IntroductionLesson(path: $navigationPath)
                 case "WhoWasMonet":
                     WhoWasMonet(path: $navigationPath)
+                case "ImpressionistTechnique":
+                    ImpressionistTechnique(path: $navigationPath)
                 case "QuickQuiz":
                     QuickQuizView(path: $navigationPath)
+                case "ImpressionistTechnique2":
+                    ImpressionistTechnique2(path: $navigationPath)
+                case "FindTheFakeView":
+                    FindTheFakeView(path: $navigationPath)
+                case "DragDropMinigame":
+                    DragDropMinigame(path: $navigationPath)
+                case "SectionView":
+                    SectionView()
                 default:
                     Text("Page Not Found")
                 }

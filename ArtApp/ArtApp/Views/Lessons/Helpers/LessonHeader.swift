@@ -30,7 +30,7 @@ struct LessonHeader: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Button(action: {
-                    path.removeLast()
+                    path = NavigationPath()
                 }) {
                     Image(systemName: "arrow.left")
                         .foregroundColor(Color("blue-letters"))

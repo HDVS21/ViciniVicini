@@ -11,8 +11,8 @@ struct DragDropMinigame: View {
     @State var showAlert = false
     @State var isCorrect: Bool = false
     @State var alertShowed = false
-    
     @Binding var path: NavigationPath
+    @State var next = false
     
     var body: some View {
         VStack {
@@ -28,14 +28,21 @@ struct DragDropMinigame: View {
                 .padding()
             
             Button {
-                showAlert.toggle()
-                alertShowed.toggle()
+                if alertShowed && next {
+                    path.append("Introduction to Monet")
+                } else {
+                    showAlert.toggle()
+                }
+                alertShowed = true
+                if isCorrect {
+                    next = true
+                }
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundStyle(Color("green-buttons"))
                         .frame(width: 280, height: 60)
-                    Text(isCorrect && alertShowed ? "Next" : "Confirm Selection")
+                    Text(isCorrect && next ? "Next" : "Confirm Selection")
                         .foregroundStyle(.white)
                         .bold()
                     if showAlert {
@@ -49,6 +56,7 @@ struct DragDropMinigame: View {
             
             Spacer()
         }
+        .navigationBarHidden(true)
         .ignoresSafeArea()
     }
 }

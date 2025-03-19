@@ -78,7 +78,7 @@ struct MinigameDestinationView: View {
     var body: some View {
         switch minigameNumber {
         case 1:
-            FindTheFakeView()
+            FindTheFakeView(path: .constant(NavigationPath()))
         case 2:
             BlurredMiniGameView(path: .constant(NavigationPath()))
         default:

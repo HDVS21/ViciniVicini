@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct FindTheFakeView: View {
-    @Environment(\.dismiss) var dismiss
+    @Binding var path: NavigationPath
     
-    var paintings = ["ftf1-painting1", "ftf1-painting2", "ftf1-painting3", "ftf1-fakePainting"]
+    var paintings = ["Bridge 1", "Rouen Cathedral 1", "Impressionist painting 4", "painting 6"]
     
     // Estado para manejar la selección del usuario
     @State private var selectedPainting: String? = nil
     @State private var showAlert = false
     @State private var isCorrect = false
+    @State private var next = false
     
-    @State var fakePainting = "fakePainting"
+    @State var fakePainting = "painting 6"
+    
+    @State var correctAlertShowed = false
     
     var body: some View {
         ZStack {
             VStack () {
-                QuizHeader(title: "Find the Fake", lettersColor: "green-letters", backgroundColor: "green-background", path: .constant(NavigationPath()))
+                QuizHeader(title: "Find the Fake", lettersColor: "green-letters", backgroundColor: "green-background", path: $path)
                 
                 Spacer()
                 
@@ -36,11 +39,9 @@ struct FindTheFakeView: View {
                 
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
                     ForEach(paintings, id: \.self) { painting in
-    //                    Image(painting)
-                        Rectangle()
-                            .fill(.gray)
-    //                        .resizable()
-    //                        .scaledToFit()
+                        Image(painting)
+                            .resizable()
+                            .scaledToFill()
                             .frame(width: 159 ,height: 159)
                             .cornerRadius(16.0)
                             .border(selectedPainting == painting ? Color("green-buttons") : Color.clear, width: 4)
@@ -56,12 +57,22 @@ struct FindTheFakeView: View {
                 
                 if selectedPainting != nil {
                     Button(action: {
+                        if next {
+                            path.append("DragDropMinigame")
+                            correctAlertShowed = true
+                        }
                         if selectedPainting == fakePainting {
                             isCorrect = true
+                            next = true
                         } else {
                             isCorrect = false
                         }
-                        showAlert = true
+                        
+                        if !correctAlertShowed{
+                            showAlert = true
+                        }
+                        
+                
                     }) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
@@ -107,5 +118,5 @@ struct FindTheFakeView: View {
 }
 
 #Preview {
-    FindTheFakeView()
+    FindTheFakeView(path: .constant(NavigationPath()))
 }
