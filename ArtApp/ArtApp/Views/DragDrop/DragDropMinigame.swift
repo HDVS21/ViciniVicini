@@ -29,7 +29,7 @@ struct DragDropMinigame: View {
             
             Button {
                 if alertShowed && next {
-                    path.append("Introduction to Monet")
+                    path.removeLast(4)
                 } else {
                     showAlert.toggle()
                 }
